@@ -1,4 +1,4 @@
-2015_Tauxe-et-al_PmagPy_Notebook
+Using PmagPy in a IPython (jupyter) notebook for open and reproducible paleomagnetic data analysis
 ================================
 
-Repository containing an example IPython notebook that was developed for the Tauxe et al., 2015 manuscript on the PmagPy project 
+This repository contains an example IPython (jupyter) notebook that was developed for the Tauxe et al., 2015 manuscript on the PmagPy project 
