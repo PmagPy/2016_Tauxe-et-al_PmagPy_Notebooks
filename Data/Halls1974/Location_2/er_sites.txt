@@ -1,0 +1,7 @@
+tab 	er_sites
+er_citation_names	er_location_name	er_site_name	magic_method_codes	site_bed_dip	site_bed_dip_direction	site_class	site_definition	site_lat	site_lithology	site_lon	site_type
+This study	Osler Volcanics, Nipigon Strait, Upper Normal	1	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	10	135	Extrusive	s	48.63	Basalt	271.89	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Upper Normal	2	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	12	140	Extrusive	s	48.64	Basalt	271.91	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Upper Normal	3	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	14	146	Extrusive	s	48.64	Basalt	271.93	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Upper Normal	4	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	12	135	Extrusive	s	48.66	Basalt	271.96	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Upper Normal	5	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	10	135	Extrusive	s	48.66	Basalt	271.96	Lava Flow

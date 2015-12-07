@@ -1,0 +1,11 @@
+tab 	magic_methods
+er_citation_names	magic_method_code	method_definition	method_iaga7	method_type	method_url_tauxe
+Cox & Doell 1960	DE-DI	Pole latitude and longitude calculation from mean declination-inclination	Ptype D	Direction Estimation	
+Fisher 1953	DE-FM	Fisher mean		Direction Estimation	
+Fisher 1953	DE-K	Kappa estimation		Direction Estimation	
+Cox & Doell 1960	DE-VGP	Pole latitude and longitude calculation from mean VGP	Ptype V	Direction Estimation	
+Collinson 1983	FS-FD	Field drilling using a hand-held portable drill		Field Sampling	http://earthref.org/MAGIC/books/Tauxe/2005/lecture.09.htm#FS-FD
+Collinson 1983	FS-H	Hand sampling		Field Sampling	http://earthref.org/MAGIC/books/Tauxe/2005/lecture.09.htm#FS-H
+	FS-LOC-GOOGLE	Location determination: Digitization of latitude and longitudes using Google Maps or Earth		Field Sampling	
+McElhinny & McFadden 2000	LP-DC2	Bulk demagnetization carried out on all samples but no vector diagrams shown	DC2	Lab Protocol	http://earthref.org/MAGIC/books/Tauxe/2005/lecture.16.htm#IAGA7
+Collinson 1983	SO-SM	Magnetic and/or sun compass		Sample Orientation	

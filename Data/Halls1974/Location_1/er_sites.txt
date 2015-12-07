@@ -1,0 +1,27 @@
+tab 	er_sites
+er_citation_names	er_location_name	er_site_name	magic_method_codes	site_bed_dip	site_bed_dip_direction	site_class	site_definition	site_lat	site_lithology	site_lon	site_type
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	6	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	28	131	Extrusive	s	48.66	Basalt	271.95	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	7	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	20	149	Extrusive	s	48.68	Basalt	271.98	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	8	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	18	150	Extrusive	s	48.68	Basalt	271.97	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	9	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	20	145	Extrusive	s	48.68	Basalt	271.94	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	10	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	30	134	Extrusive	s	48.66	Basalt	271.93	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	11	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	30	132	Extrusive	s	48.66	Basalt	271.93	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	12	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	40	132	Extrusive	s	48.66	Basalt	271.92	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	13	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	35	120	Extrusive	s	48.65	Basalt	271.91	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	14	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	20	120	Extrusive	s	48.65	Basalt	271.92	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	15	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	30	115	Extrusive	s	48.65	Basalt	271.9	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	16	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	45	110	Extrusive	s	48.64	Basalt	271.9	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	17	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	25	110	Extrusive	s	48.63	Basalt	271.89	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	18	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	12	155	Extrusive	s	48.61	Basalt	271.84	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	19	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	12	133	Extrusive	s	48.61	Basalt	271.83	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	20	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	10	132	Extrusive	s	48.59	Basalt	271.81	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	21	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	20	110	Extrusive	s	48.64	Basalt	271.88	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	22	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	20	110	Extrusive	s	48.64	Basalt	271.88	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	23	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	10	145	Extrusive	s	48.62	Basalt	271.84	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	24	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	20	145	Extrusive	s	48.68	Basalt	271.94	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	25	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	20	140	Extrusive	s	48.69	Basalt	271.95	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	26	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	20	140	Extrusive	s	48.71	Basalt	271.93	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	27	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	10	130	Extrusive	s	48.67	Basalt	271.9	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	28	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	7	130	Extrusive	s	48.68	Basalt	271.9	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	29	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	7	130	Extrusive	s	48.68	Basalt	271.9	Lava Flow
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	30	FS-FD:FS-H:FS-LOC-GOOGLE:SO-SM	6	129	Extrusive	s	48.59	Basalt	271.78	Lava Flow
