@@ -1,0 +1,19 @@
+\BOOKMARK [1][-]{section.1}{Before you begin}{}% 1
+\BOOKMARK [1][-]{section.2}{Introduction}{}% 2
+\BOOKMARK [1][-]{section.3}{Import necessary function libraries for data analysis}{}% 3
+\BOOKMARK [1][-]{section.4}{Background on the Osler Volcanic Group}{}% 4
+\BOOKMARK [1][-]{section.5}{Import data into the notebook}{}% 5
+\BOOKMARK [2][-]{subsection.5.1}{Unpack files downloaded from the MagIC database}{section.5}% 6
+\BOOKMARK [2][-]{subsection.5.2}{Loading the unpacked data into Pandas Dataframes}{section.5}% 7
+\BOOKMARK [2][-]{subsection.5.3}{Filtering by polarity and tilt-correction}{section.5}% 8
+\BOOKMARK [1][-]{section.6}{Data analysis and visualization}{}% 9
+\BOOKMARK [2][-]{subsection.6.1}{Calculating Fisher means}{section.6}% 10
+\BOOKMARK [2][-]{subsection.6.2}{Plotting the Halls \(1974\) results}{section.6}% 11
+\BOOKMARK [2][-]{subsection.6.3}{Combining and plotting the Halls \(1974\) and Swanson-Hysell et al. \(2014\) data}{section.6}% 12
+\BOOKMARK [2][-]{subsection.6.4}{Fold test on the site mean directions}{section.6}% 13
+\BOOKMARK [1][-]{section.7}{Developing a mean paleomagnetic pole}{}% 14
+\BOOKMARK [2][-]{subsection.7.1}{Conducting a common mean test}{section.7}% 15
+\BOOKMARK [2][-]{subsection.7.2}{Calculating a mean paleomagnetic pole}{section.7}% 16
+\BOOKMARK [2][-]{subsection.7.3}{Plotting VGPs and the mean pole}{section.7}% 17
+\BOOKMARK [1][-]{section.8}{Concluding thoughts}{}% 18
+\BOOKMARK [1][-]{section.9}{Works cited}{}% 19

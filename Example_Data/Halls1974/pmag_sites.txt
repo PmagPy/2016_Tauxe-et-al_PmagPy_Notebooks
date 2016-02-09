@@ -5,7 +5,7 @@ This study	Osler Volcanics, Nipigon Strait, Upper Normal	1	DE-K:FS-FD:FS-H:LP-DC
 This study	Osler Volcanics, Nipigon Strait, Upper Normal	2	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	285.7	42	243	5	n	100
 This study	Osler Volcanics, Nipigon Strait, Upper Normal	2	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	290.6	31.9	243	5	n	0
 This study	Osler Volcanics, Nipigon Strait, Upper Normal	3	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	307.4	37.9	2485	5	n	100
-This study	Osler Volcanics, Nipigon Strait, Upper Normal	3	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	310	24.6	2485	5	n	0
+This study	Osler Volcanics, Nipigon Strait, Upper Normal	3	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	310.0	24.6	2485	5	n	0
 This study	Osler Volcanics, Nipigon Strait, Upper Normal	4	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	302.8	29.9	331	5	n	100
 This study	Osler Volcanics, Nipigon Strait, Upper Normal	4	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	303.9	18.2	331	5	n	0
 This study	Osler Volcanics, Nipigon Strait, Upper Normal	5	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	294.7	42.5	130	5	n	100
@@ -16,8 +16,8 @@ This study	Osler Volcanics, Nipigon Strait, Lower Reversed	7	DE-K:FS-FD:FS-H:LP-
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	7	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	124.5	-45.3	351	6	r	0
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	8	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	140.7	-64.8	679	5	r	100
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	8	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	144.3	-47	679	5	r	0
-This study	Osler Volcanics, Nipigon Strait, Lower Reversed	9	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	110	-56.6	321	3	r	100
-This study	Osler Volcanics, Nipigon Strait, Lower Reversed	9	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	121	-39.1	321	3	r	0
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	9	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	110.0	-56.6	321	3	r	100
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	9	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	121.0	-39.1	321	3	r	0
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	10	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	128.2	-42	59	5	r	100
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	10	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	129.7	-12.1	59	5	r	0
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	11	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	88.3	-59.1	456	3	r	100
@@ -30,11 +30,11 @@ This study	Osler Volcanics, Nipigon Strait, Lower Reversed	14	DE-K:FS-FD:FS-H:LP
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	14	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	111.9	-36.2	121	6	r	0
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	15	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	118.5	-46	402	6	r	100
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	15	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	117.6	-16.1	402	6	r	0
-This study	Osler Volcanics, Nipigon Strait, Lower Reversed	16	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	106	-54.2	125	6	r	100
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	16	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	106.0	-54.2	125	6	r	100
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	16	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	107.7	-9.3	125	6	r	0
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	17	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	93.7	-54.1	362	4	r	100
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	17	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	99.1	-29.8	362	4	r	0
-This study	Osler Volcanics, Nipigon Strait, Lower Reversed	18	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	116	-53	224	4	r	100
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	18	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	116.0	-53	224	4	r	100
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	18	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	123.8	-43.2	224	4	r	0
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	19	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	131.7	-64.9	871	4	r	100
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	19	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	132.1	-53	871	4	r	0
@@ -50,7 +50,7 @@ This study	Osler Volcanics, Nipigon Strait, Lower Reversed	24	DE-K:FS-FD:FS-H:LP
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	24	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	122.2	-22.3	77	3	r	0
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	25	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	126.3	-58.7	166	3	r	100
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	25	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	130.9	-39.2	166	3	r	0
-This study	Osler Volcanics, Nipigon Strait, Lower Reversed	26	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	112	-75.1	3634	3	r	100
+This study	Osler Volcanics, Nipigon Strait, Lower Reversed	26	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	112.0	-75.1	3634	3	r	100
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	26	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	127.6	-56.2	3634	3	r	0
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	27	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	118.6	-70.3	729	3	r	100
 This study	Osler Volcanics, Nipigon Strait, Lower Reversed	27	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	122.3	-60.5	729	3	r	0

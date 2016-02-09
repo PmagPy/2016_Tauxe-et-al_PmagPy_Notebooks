@@ -1,0 +1,1471 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass{article}
+
+    
+    
+    \usepackage{graphicx} % Used to insert images
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{color} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage{ulem} % ulem is needed to support strikethroughs (\sout)
+    
+
+    
+    
+    \definecolor{orange}{cmyk}{0,0.4,0.8,0.2}
+    \definecolor{darkorange}{rgb}{.71,0.21,0.01}
+    \definecolor{darkgreen}{rgb}{.12,.54,.11}
+    \definecolor{myteal}{rgb}{.26, .44, .56}
+    \definecolor{gray}{gray}{0.45}
+    \definecolor{lightgray}{gray}{.95}
+    \definecolor{mediumgray}{gray}{.8}
+    \definecolor{inputbackground}{rgb}{.95, .95, .85}
+    \definecolor{outputbackground}{rgb}{.95, .95, .95}
+    \definecolor{traceback}{rgb}{1, .95, .95}
+    % ansi colors
+    \definecolor{red}{rgb}{.6,0,0}
+    \definecolor{green}{rgb}{0,.65,0}
+    \definecolor{brown}{rgb}{0.6,0.6,0}
+    \definecolor{blue}{rgb}{0,.145,.698}
+    \definecolor{purple}{rgb}{.698,.145,.698}
+    \definecolor{cyan}{rgb}{0,.698,.698}
+    \definecolor{lightgray}{gray}{0.5}
+    
+    % bright ansi colors
+    \definecolor{darkgray}{gray}{0.25}
+    \definecolor{lightred}{rgb}{1.0,0.39,0.28}
+    \definecolor{lightgreen}{rgb}{0.48,0.99,0.0}
+    \definecolor{lightblue}{rgb}{0.53,0.81,0.92}
+    \definecolor{lightpurple}{rgb}{0.87,0.63,0.87}
+    \definecolor{lightcyan}{rgb}{0.5,1.0,0.83}
+    
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{Additional\_PmagPy\_Examples}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=blue,
+      linkcolor=darkorange,
+      citecolor=darkgreen,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+     \parindent = 0.0 in
+    \parskip = 0.1 in
+
+    \begin{document}
+
+    
+    {\textbf{\LARGE{Jupyter notebook demonstrating the use of additional PmagPy
+functions}}\label{jupyter-notebook-demonstrating-the-use-of-additional-pmagpy-functions}
+
+    This Jupyter notebook demonstrates a number of PmagPy functions within a
+notebook environment running a Python 2.7 kernel. The benefits of
+working within these notebooks include: reproducibility, interactive
+code development, convenient workspace for projects, version control
+(when integrated with GitHub or other version control software) and ease
+of sharing.
+
+The notebook can be viewed as html at the following link where the code and tables are better rendered than in this PDF: \url{http://pmagpy.github.io/Additional_PmagPy_Examples.html}
+
+\section{Contents of the notebook}
+\subsection{Paleomagnetic Data Analysis
+Walkthrough}\label{paleomagnetic-data-analysis-walkthrough}
+
+\textbf{Basic Functions} * \hyperref[The-dipole-equation]{The Dipole
+Equation} *
+\hyperref[Get-local-geomagnetic-field-estimate-from-IGRF]{Get local
+geomagnetic field estimate from IGRF} *
+\hyperref[Plotting-Directions]{Plotting Directional Data} *
+\hyperref[Calculate-the-Angle-Between-Directions]{Calculating the Angle
+Between Two Directions} *
+\hyperref[Generate-and-plot-Fisher-distributed-unit-vectors-from-a-specified-distribution]{Fisher-Distributed
+Directions} * \hyperref[Flip-polarity-of-directional-data]{Flip
+Directional Data}
+
+\textbf{Data Analysis} *
+\hyperref[Test-directional-data-for-Fisher-distribution]{Test if
+Directions Are Fisher-Distributed} *
+\hyperref[Squish-directional-data]{Simulating Inclination Error in
+Paleomagnetic Data} * \hyperref[Unsquish-directional-data]{Correcting
+for Inclination Error in Paleomagnetic Data} *
+\hyperref[Bootstrap-Reversal-Test]{Bootstrap Reversal Test} *
+\hyperref[MM1990]{McFadden and McElhinny (1990) Reversal Test}
+
+\textbf{Plotting Paleomagnetic Poles} *
+\hyperref[Working-with-Poles]{Working with Poles} *
+\hyperref[Calculate-and-Plot-VGPs]{Calculate and Plot VGPs} *
+\hyperref[Plotting-APWPs]{Plotting APWPs}
+
+\subsection{Rock Magnetism Data
+Analysis}\label{rock-magnetism-data-analysis}
+
+\begin{itemize}
+\tightlist
+\item
+  \hyperref[Working-with-anisotropy-data]{Working with Anisotropy Data}
+\item
+  \hyperref[Curie-temperature-data]{Working with Curie Temperature Data}
+\item
+  \hyperref[Day-plots]{Day Plots}
+\item
+  \hyperref[Hysteresis-Loops]{Hysteresis Loops}
+\item
+  \hyperref[Demagnetization-Curves]{Demagnetization Curves}
+\end{itemize}
+
+\subsection{Additional Features of the Jupyter
+Notebook}\label{additional-features-of-the-jupyter-notebook}
+
+\begin{itemize}
+\tightlist
+\item
+  \hyperref[Interactive-plotting]{Interactive Plotting}
+\end{itemize}
+
+\textit{Note: This notebook makes use of pandas for reading, displaying,
+and using data with a dataframe structure. More information about the
+pandas module and its use within PmagPy can be found
+\href{http://earthref.org/PmagPy/cookbook/\#x1-1850007.4}{here} within
+the documentation of the
+\href{http://earthref.org/PmagPy/cookbook/}{PmagPy Cookbook}.}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{c}{\PYZsh{} With the PmagPy folder in the PYTHONPATH, }
+        \PY{c}{\PYZsh{} the function modules from PmagPy can be imported}
+        \PY{k+kn}{import} \PY{n+nn}{pmagpy.ipmag} \PY{k+kn}{as} \PY{n+nn}{ipmag}
+        \PY{k+kn}{import} \PY{n+nn}{pmagpy.pmagplotlib} \PY{k+kn}{as} \PY{n+nn}{pmagplotlib}
+        \PY{k+kn}{import} \PY{n+nn}{pmagpy.pmag} \PY{k+kn}{as} \PY{n+nn}{pmag}
+        
+        \PY{k+kn}{from} \PY{n+nn}{mpl\PYZus{}toolkits.basemap} \PY{k+kn}{import} \PY{n}{Basemap}
+        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
+        \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k+kn}{as} \PY{n+nn}{pd}
+        \PY{k+kn}{import} \PY{n+nn}{matplotlib.pyplot} \PY{k+kn}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{import} \PY{n+nn}{os}
+        \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+        \PY{o}{\PYZpc{}}\PY{k}{config} InlineBackend.figure\PYZus{}formats = \PYZob{}\PYZsq{}svg\PYZsq{},\PYZcb{}
+\end{Verbatim}
+
+    \section{The dipole equation}\label{the-dipole-equation}
+
+    The following demonstrates the use of a simple function
+(\textbf{ipmag.lat\_from\_inc}) which uses the dipole equation to return
+expected latitude from inclination data as predicted by a pure
+geocentric axial dipole. The expected inclination for the geomagnetic
+field can be calculated from a specified latitude using
+\textbf{ipmag.inc\_from\_lat}.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{inclination} \PY{o}{=} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{90}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}
+        \PY{n}{latitude} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+        \PY{k}{for} \PY{n}{inc} \PY{o+ow}{in} \PY{n}{inclination}\PY{p}{:}
+            \PY{n}{lat} \PY{o}{=} \PY{n}{ipmag}\PY{o}{.}\PY{n}{lat\PYZus{}from\PYZus{}inc}\PY{p}{(}\PY{n}{inc}\PY{p}{)}
+            \PY{n}{latitude}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{lat}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{inclination}\PY{p}{,}\PY{n}{latitude}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{latitude}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{inclination}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_6_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Get local geomagnetic field estimate from
+IGRF}\label{get-local-geomagnetic-field-estimate-from-igrf}
+
+    The function \textbf{ipmag.igrf} uses the International Geomagnetic
+Reference Field (IGRF) model to estimate the geomagnetic field direction
+at a particular location and time. Let's find the direction of the
+geomagnetic field in Berkeley, California (37.87° N, 122.27° W,
+elevation of 52 m) on August 27, 2013 (in decimal format, 2013.6544).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{berk\PYZus{}igrf} \PY{o}{=} \PY{n}{ipmag}\PY{o}{.}\PY{n}{igrf}\PY{p}{(}\PY{p}{[}\PY{l+m+mf}{2013.6544}\PY{p}{,} \PY{o}{.}\PY{l+m+mo}{052}\PY{p}{,} \PY{l+m+mf}{37.871667}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{122.272778}\PY{p}{]}\PY{p}{)}
+        \PY{n}{ipmag}\PY{o}{.}\PY{n}{igrf\PYZus{}print}\PY{p}{(}\PY{n}{berk\PYZus{}igrf}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Declination: 13.950
+Inclination: 61.354
+Intensity: 13.950 nT
+    \end{Verbatim}
+
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Plotting Directions}\label{plotting-directions}
+
+    We can plot this direction using \textbf{matplotlib} (\textbf{plt}) in
+conjunction with a few \textbf{ipmag} functions. To do this, we first
+initiate a figure (numbered as Fig. 0, with a size of 6x6) with the
+following syntax:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plt.figure(num}\OperatorTok{=}\DecValTok{0}\NormalTok{,figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{6}\NormalTok{,}\DecValTok{6}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+We then draw an equal area stereonet within the figure, specifying the
+figure number:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ipmag.plot_net(}\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Now we can plot the direction we just pulled from IGRF using
+\textbf{ipmag.plot\_di()}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ipmag.plot_di(berk_igrf[}\DecValTok{0}\NormalTok{],berk_igrf[}\DecValTok{1}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+To label or color the plotted points, we would pass the same code as
+above but with a few extra arguments and one additional line of code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ipmag.plot_di(berk_igrf[}\DecValTok{0}\NormalTok{],berk_igrf[}\DecValTok{1}\NormalTok{], color}\OperatorTok{=}\StringTok{'r'}\NormalTok{, label}\OperatorTok{=}\StringTok{"Berkeley, CA -- August 27, 2013"}\NormalTok{)}
+\NormalTok{plt.legend()}
+\end{Highlighting}
+\end{Shaded}
+
+We may wish to save the figure we just created. To do so, we would pass
+the following \textit{save} function, specifying 1) the relative path to
+the folder where we want the figure to be saved and 2) the name of the
+file with the desired extension (.pdf in this example):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plt.savefig(}\StringTok{"./Additional_Notebook_Output/Berkeley_IGRF.pdf"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+To ensure the figure is displayed properly and then cleared from the
+namespace, it is good practice to end such a code block with the
+following:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+Now let's run the code we just developed.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{num}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+        \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}net}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}
+        \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}di}\PY{p}{(}\PY{n}{berk\PYZus{}igrf}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{berk\PYZus{}igrf}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{r}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{Berkeley, CA \PYZhy{}\PYZhy{} August 27, 2013}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{savefig}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{./Additional\PYZus{}Notebook\PYZus{}Output/Berkeley\PYZus{}IGRF.pdf}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_14_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Let's see how this magnetic direction compares to the Geocentric Axial
+Dipole (GAD) model of the geomagnetic field. We can estimate the
+expected GAD inclination by passing Berkeley's latitude to the function
+\textbf{ipmag.inc\_from\_lat}.
+
+We also demonstrate below how to manipulate the placement of the figure
+legend to ensure no data points are obscured. \textbf{plt.legend} uses
+the ``best'' location by default, but this can be changed with the
+following:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plt.legend(loc}\OperatorTok{=}\StringTok{"upper right"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+or
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{plt.legend(loc}\OperatorTok{=}\StringTok{"lower center"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+See the \textbf{plt.legend} documentation for the complete list of
+placement options. Alternatively, you can give \texttt{(x,y)}
+coordinates to the \texttt{loc=} keyword argument (with the origin
+\texttt{(0,0)} at the lower left of the figure). To manipulate placement
+even more precisely, use the keyword \texttt{bbox\_to\_anchor} in
+conjunction with \texttt{loc}. If this is done, \texttt{loc} becomes the
+anchor point on the legend, and \texttt{bbox\_to\_anchor} places this
+anchor point at the specified coordinates. The latter method is
+demonstrated below. Play around with the \textbf{plt.legend} arguments
+to see how this changes things.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{GAD\PYZus{}inc} \PY{o}{=} \PY{n}{ipmag}\PY{o}{.}\PY{n}{inc\PYZus{}from\PYZus{}lat}\PY{p}{(}\PY{l+m+mf}{37.87}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{num}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+        \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}net}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}
+        \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}di}\PY{p}{(}\PY{n}{berk\PYZus{}igrf}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{berk\PYZus{}igrf}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{r}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{Berkeley, CA \PYZhy{}\PYZhy{} August 27, 2013 (IGRF)}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}di}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{GAD\PYZus{}inc}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{b}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{Berkeley, CA (GAD)}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{n}{loc}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{center left}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{bbox\PYZus{}to\PYZus{}anchor}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{1.0}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_16_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    Below, we calculate the angular difference between these two directions.
+
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Calculate the Angle Between
+Directions}\label{calculate-the-angle-between-directions}
+
+    While \textbf{ipmag} functions have been optimized to preform tasks
+within an interactive computing environment such as the Jupyter
+notebook, the \textbf{pmag} functions which are used extensively within
+\textbf{ipmag} can also be directly called. Here is a demonstration of
+the function \textbf{pmag.angle}, which calculates the angle between two
+directions and outputs a \textbf{numpy} array. Continuing our comparison
+from the last section, let's calculate the angle between the IGRF and
+GAD-estimated magnetic directions calculated and plotted above.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{direction1} \PY{o}{=} \PY{p}{[}\PY{n}{berk\PYZus{}igrf}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{berk\PYZus{}igrf}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}
+        \PY{n}{direction2} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{GAD\PYZus{}inc}\PY{p}{]}
+        \PY{k}{print} \PY{n}{pmag}\PY{o}{.}\PY{n}{angle}\PY{p}{(}\PY{n}{direction1}\PY{p}{,}\PY{n}{direction2}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+8.18973048085
+    \end{Verbatim}
+
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Generate and plot Fisher distributed unit vectors from a
+specified
+distribution}\label{generate-and-plot-fisher-distributed-unit-vectors-from-a-specified-distribution}
+
+    Let's use the function \textbf{ipmag.fishrot} to generate a set of 50
+Fisher-distributed directions at a declination of 200° and inclination
+of 45°. These directions will serve as an example paleomagnetic dataset
+that will be used for the next several examples. The output from
+\textbf{ipmag.fishrot} is a nested list of lists of vectors
+(declination, inclination, intensity). Generally these vectors are unit
+vectors with an intensity of 1.0. We refer to this data structure as a
+di\_block. In the code below the first two vectors are shown.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{fisher\PYZus{}directions} \PY{o}{=} \PY{n}{ipmag}\PY{o}{.}\PY{n}{fishrot}\PY{p}{(}\PY{n}{k}\PY{o}{=}\PY{l+m+mi}{40}\PY{p}{,} \PY{n}{n}\PY{o}{=}\PY{l+m+mi}{50}\PY{p}{,} \PY{n}{dec}\PY{o}{=}\PY{l+m+mi}{200}\PY{p}{,} \PY{n}{inc}\PY{o}{=}\PY{l+m+mi}{50}\PY{p}{)}
+        \PY{n}{fisher\PYZus{}directions}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}8}]:} [[183.99588954660211, 45.029054467016621, 1.0],
+         [200.58837258558225, 41.811402826036407, 1.0]]
+\end{Verbatim}
+        
+    This di\_block can be unpacked in separate lists of declination and
+inclination using the \textbf{ipmag.unpack\_di\_block} function.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{fisher\PYZus{}decs}\PY{p}{,} \PY{n}{fisher\PYZus{}incs} \PY{o}{=} \PY{n}{ipmag}\PY{o}{.}\PY{n}{unpack\PYZus{}di\PYZus{}block}\PY{p}{(}\PY{n}{fisher\PYZus{}directions}\PY{p}{)}
+        \PY{k}{print} \PY{n}{fisher\PYZus{}decs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+        \PY{k}{print} \PY{n}{fisher\PYZus{}incs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+183.995889547
+45.029054467
+    \end{Verbatim}
+
+    Another way to deal with the di\_block is to make it into a pandas
+dataframe which allows for the direction to be nicely displayed and
+analyzed. In the code below, a dataframe is made from the
+\textit{fisher\_directions} di\_block and then the first 5 rows are
+displayed with .head().
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{directions} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{DataFrame}\PY{p}{(}\PY{n}{fisher\PYZus{}directions}\PY{p}{,}\PY{n}{columns}\PY{o}{=}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{dec}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{inc}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{length}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+         \PY{n}{directions}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}10}]:}           dec        inc  length
+         0  183.995890  45.029054       1
+         1  200.588373  41.811403       1
+         2  199.546318  36.865786       1
+         3  182.021565  57.114399       1
+         4  221.438217  38.160275       1
+\end{Verbatim}
+        
+    Now let's calculate the Fisher and Bingham means of these data.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{fisher\PYZus{}mean} \PY{o}{=} \PY{n}{ipmag}\PY{o}{.}\PY{n}{fisher\PYZus{}mean}\PY{p}{(}\PY{n}{directions}\PY{o}{.}\PY{n}{dec}\PY{p}{,}\PY{n}{directions}\PY{o}{.}\PY{n}{inc}\PY{p}{)}
+         \PY{n}{bingham\PYZus{}mean} \PY{o}{=} \PY{n}{ipmag}\PY{o}{.}\PY{n}{bingham\PYZus{}mean}\PY{p}{(}\PY{n}{directions}\PY{o}{.}\PY{n}{dec}\PY{p}{,}\PY{n}{directions}\PY{o}{.}\PY{n}{inc}\PY{p}{)}
+\end{Verbatim}
+
+    Here's the raw output of the Fisher mean which is a dictionary
+containing the mean direction and associated statistics:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{fisher\PYZus{}mean}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}12}]:} \{'alpha95': 3.159239986865467,
+          'csd': 12.553483567656313,
+          'dec': 198.86339034639676,
+          'inc': 49.196847025953076,
+          'k': 41.633365663104868,
+          'n': 50,
+          'r': 48.823059360693883\}
+\end{Verbatim}
+        
+    The function \textbf{ipmag.print\_direction\_mean} prints formatted
+output from this Fisher mean dictionary:
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{ipmag}\PY{o}{.}\PY{n}{print\PYZus{}direction\PYZus{}mean}\PY{p}{(}\PY{n}{fisher\PYZus{}mean}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Dec: 198.9  Inc: 49.2
+Number of directions in mean (n): 50
+Angular radius of 95\% confidence (a\_95): 3.2
+Precision parameter (k) estimate: 41.6
+    \end{Verbatim}
+
+    Now we can plot all of our data using the function
+\textbf{ipmag.plot\_di}. We can also plot the Fisher mean with its
+angular radius of 95\% confidence ( \(\alpha_{95}\) ) using
+\textbf{ipmag.plot\_di\_mean}.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{declinations} \PY{o}{=} \PY{n}{directions}\PY{o}{.}\PY{n}{dec}\PY{o}{.}\PY{n}{tolist}\PY{p}{(}\PY{p}{)}
+         \PY{n}{inclinations} \PY{o}{=} \PY{n}{directions}\PY{o}{.}\PY{n}{inc}\PY{o}{.}\PY{n}{tolist}\PY{p}{(}\PY{p}{)}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{num}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}net}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}di}\PY{p}{(}\PY{n}{declinations}\PY{p}{,}\PY{n}{inclinations}\PY{p}{)}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}di\PYZus{}mean}\PY{p}{(}\PY{n}{fisher\PYZus{}mean}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{dec}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,}\PY{n}{fisher\PYZus{}mean}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{inc}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,}\PY{n}{fisher\PYZus{}mean}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{alpha95}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{r}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_37_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Flip polarity of directional
+data}\label{flip-polarity-of-directional-data}
+
+    Let's flip all the directions (find their antipodes) of the
+Fisher-distributed population using the function
+\textbf{ipmag.do\_flip()} function and plot the resulting directions.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{c}{\PYZsh{} get reversed directions}
+         \PY{n}{dec\PYZus{}reversed}\PY{p}{,}\PY{n}{inc\PYZus{}reversed} \PY{o}{=} \PY{n}{ipmag}\PY{o}{.}\PY{n}{do\PYZus{}flip}\PY{p}{(}\PY{n}{declinations}\PY{p}{,}\PY{n}{inclinations}\PY{p}{)}
+         
+         \PY{c}{\PYZsh{} take the Fisher mean of these reversed directions}
+         \PY{n}{rev\PYZus{}mean} \PY{o}{=} \PY{n}{ipmag}\PY{o}{.}\PY{n}{fisher\PYZus{}mean}\PY{p}{(}\PY{n}{dec\PYZus{}reversed}\PY{p}{,}\PY{n}{inc\PYZus{}reversed}\PY{p}{)}
+         
+         \PY{c}{\PYZsh{} plot the flipped directions}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{num}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}net}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}di}\PY{p}{(}\PY{n}{dec\PYZus{}reversed}\PY{p}{,} \PY{n}{inc\PYZus{}reversed}\PY{p}{)}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}di\PYZus{}mean}\PY{p}{(}\PY{n}{rev\PYZus{}mean}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{dec}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,}\PY{n}{rev\PYZus{}mean}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{inc}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,}\PY{n}{rev\PYZus{}mean}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{alpha95}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{r}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{marker}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{s}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_41_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Test directional data for Fisher
+distribution}\label{test-directional-data-for-fisher-distribution}
+
+    The function \textbf{ipmag.fishqq} tests whether directional data are
+Fisher-distributed. Let's use this test on the random Fisher-distributed
+directions we just created (it should pass!).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{ipmag}\PY{o}{.}\PY{n}{fishqq}\PY{p}{(}\PY{n}{declinations}\PY{p}{,} \PY{n}{inclinations}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}16}]:} \{'Dec': 198.86305338122148,
+          'Inc': 49.174480281318843,
+          'Me': 0.83647984581601553,
+          'Me\_critical': 1.094,
+          'Mode': 'Mode 1',
+          'Mu': 0.83924082417308898,
+          'Mu\_critical': 1.207,
+          'N': 50,
+          'Test\_result': 'consistent with Fisherian model'\}
+\end{Verbatim}
+        
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_45_1.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_45_2.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Squish directional data}\label{squish-directional-data}
+
+    Inclination flattening can occur for magnetizations in sedimentary
+rocks. We can simulate inclination error of a specified ``flattening
+factor'' with the function \textbf{ipmag.squish}. Flattening factors
+range from 0 (completely flattened) to 1 (no flattening). Let's squish
+our directions with a 0.4 flattening factor.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{c}{\PYZsh{} squish all inclinations}
+         \PY{n}{squished\PYZus{}incs} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+         \PY{k}{for} \PY{n}{inclination} \PY{o+ow}{in} \PY{n}{inclinations}\PY{p}{:}
+             \PY{n}{squished\PYZus{}incs}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{ipmag}\PY{o}{.}\PY{n}{squish}\PY{p}{(}\PY{n}{inclination}\PY{p}{,} \PY{l+m+mf}{0.4}\PY{p}{)}\PY{p}{)}
+         
+         \PY{c}{\PYZsh{} plot the squished directional data}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{num}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}net}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}di}\PY{p}{(}\PY{n}{declinations}\PY{p}{,}\PY{n}{squished\PYZus{}incs}\PY{p}{)}
+         \PY{n}{squished\PYZus{}DIs} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n+nb}{zip}\PY{p}{(}\PY{n}{declinations}\PY{p}{,}\PY{n}{squished\PYZus{}incs}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_49_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{n}{ipmag}\PY{o}{.}\PY{n}{fisher\PYZus{}mean}\PY{p}{(}\PY{n}{di\PYZus{}block}\PY{o}{=}\PY{n}{squished\PYZus{}DIs}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}18}]:} \{'alpha95': 3.7940228548357475,
+          'csd': 14.997170953500827,
+          'dec': 198.72106646496212,
+          'inc': 25.567588455989114,
+          'k': 29.171002445333873,
+          'n': 50,
+          'r': 48.320249703731456\}
+\end{Verbatim}
+        
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Unsquish directional data}\label{unsquish-directional-data}
+
+    We can also ``unsquish'' data by a specified flattening factor. Let's
+unsquish the data we squished above with the function
+\textbf{ipmag.unsquish}. Using a flattening factor of 0.4 will restore
+the data to its original state.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{unsquished\PYZus{}incs} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+         \PY{k}{for} \PY{n}{squished\PYZus{}inc} \PY{o+ow}{in} \PY{n}{squished\PYZus{}incs}\PY{p}{:}
+             \PY{n}{unsquished\PYZus{}incs}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{ipmag}\PY{o}{.}\PY{n}{unsquish}\PY{p}{(}\PY{n}{squished\PYZus{}inc}\PY{p}{,} \PY{l+m+mf}{0.4}\PY{p}{)}\PY{p}{)}
+         
+         \PY{c}{\PYZsh{} plot the squished directional data}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{num}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}net}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}di}\PY{p}{(}\PY{n}{declinations}\PY{p}{,}\PY{n}{unsquished\PYZus{}incs}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_54_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Bootstrap Reversal Test}\label{bootstrap-reversal-test}
+
+    Here we carry out two types of reversal tests with \textbf{ipmag} to
+test if two populations are antipodal to one another: the bootstrap
+reversal test (Tauxe, 2010; \textbf{ipmag.reversal\_test\_bootstrap})
+and the McFadden and McElhinny (1990) reversal test, which is an
+adaptation of the Watson V test for a common mean
+(\textbf{ipmag.reversal\_test\_MM1990}). The code below uses
+\textbf{ipmag.fishrot} to simulate normal directions and reversed
+directions from antipodal Fisher distributions.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{normal\PYZus{}directions} \PY{o}{=} \PY{n}{ipmag}\PY{o}{.}\PY{n}{fishrot}\PY{p}{(}\PY{n}{k}\PY{o}{=}\PY{l+m+mi}{20}\PY{p}{,}\PY{n}{n}\PY{o}{=}\PY{l+m+mi}{40}\PY{p}{,}\PY{n}{dec}\PY{o}{=}\PY{l+m+mi}{30}\PY{p}{,}\PY{n}{inc}\PY{o}{=}\PY{l+m+mi}{45}\PY{p}{)}
+         \PY{n}{reversed\PYZus{}directions} \PY{o}{=} \PY{n}{ipmag}\PY{o}{.}\PY{n}{fishrot}\PY{p}{(}\PY{n}{k}\PY{o}{=}\PY{l+m+mi}{20}\PY{p}{,}\PY{n}{n}\PY{o}{=}\PY{l+m+mi}{30}\PY{p}{,}\PY{n}{dec}\PY{o}{=}\PY{l+m+mi}{210}\PY{p}{,}\PY{n}{inc}\PY{o}{=}\PY{o}{\PYZhy{}}\PY{l+m+mi}{45}\PY{p}{)}
+         \PY{n}{combined\PYZus{}directions} \PY{o}{=} \PY{n}{normal\PYZus{}directions} \PY{o}{+} \PY{n}{reversed\PYZus{}directions}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{num}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}net}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}di}\PY{p}{(}\PY{n}{di\PYZus{}block}\PY{o}{=}\PY{n}{combined\PYZus{}directions}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_58_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{ipmag}\PY{o}{.}\PY{n}{reversal\PYZus{}test\PYZus{}bootstrap}\PY{p}{(}\PY{n}{di\PYZus{}block}\PY{o}{=}\PY{n}{combined\PYZus{}directions}\PY{p}{,} 
+                                       \PY{n}{plot\PYZus{}stereo}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,} \PY{n}{save}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,} 
+                                       \PY{n}{save\PYZus{}folder}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{./Additional\PYZus{}Notebook\PYZus{}Output/}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Here are the results of the bootstrap test for a common mean:
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_59_1.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_59_2.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+     \#\# McFadden and McElhinny (1990) Reversal Test
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{n}{ipmag}\PY{o}{.}\PY{n}{reversal\PYZus{}test\PYZus{}MM1990}\PY{p}{(}\PY{n}{di\PYZus{}block}\PY{o}{=}\PY{n}{combined\PYZus{}directions}\PY{p}{,} 
+                                    \PY{n}{plot\PYZus{}CDF}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,} \PY{n}{plot\PYZus{}stereo}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,} 
+                                    \PY{n}{save}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,} \PY{n}{save\PYZus{}folder}\PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{./Additional\PYZus{}Notebook\PYZus{}Output/}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Results of Watson V test: 
+
+Watson's V:           2.3
+Critical value of V:  6.1
+"Pass": Since V is less than Vcrit, the null hypothesis
+that the two populations are drawn from distributions
+that share a common mean direction can not be rejected.
+
+M\&M1990 classification:
+
+Angle between data set means: 4.6
+Critical angle for M\&M1990:   7.4
+The McFadden and McElhinny (1990) classification for
+this test is: 'B'
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_62_1.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_62_2.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Working with Poles}\label{working-with-poles}
+
+    A variety of plotting functions within PmagPy, together with the Basemap
+package of matplotlib, provide a great way to work with paleomagnetic
+poles, virtual geomagnetic poles, and polar wander paths.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}23}]:} \PY{c}{\PYZsh{} initiate figure and specify figure size}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+         
+         \PY{c}{\PYZsh{} initiate a Basemap projection, specifying the latitude and}
+         \PY{c}{\PYZsh{} longitude (lat\PYZus{}0 and lon\PYZus{}0) at which our figure is centered.}
+         \PY{n}{pmap} \PY{o}{=} \PY{n}{Basemap}\PY{p}{(}\PY{n}{projection}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{ortho}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{lat\PYZus{}0}\PY{o}{=}\PY{l+m+mi}{30}\PY{p}{,}\PY{n}{lon\PYZus{}0}\PY{o}{=}\PY{l+m+mi}{320}\PY{p}{,}
+                        \PY{n}{resolution}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{c}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{area\PYZus{}thresh}\PY{o}{=}\PY{l+m+mi}{50000}\PY{p}{)}
+         \PY{c}{\PYZsh{} other optional modifications to the globe figure}
+         \PY{n}{pmap}\PY{o}{.}\PY{n}{drawcoastlines}\PY{p}{(}\PY{n}{linewidth}\PY{o}{=}\PY{l+m+mf}{0.25}\PY{p}{)}
+         \PY{n}{pmap}\PY{o}{.}\PY{n}{fillcontinents}\PY{p}{(}\PY{n}{color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{bisque}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{lake\PYZus{}color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{white}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{zorder}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{pmap}\PY{o}{.}\PY{n}{drawmapboundary}\PY{p}{(}\PY{n}{fill\PYZus{}color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{white}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{pmap}\PY{o}{.}\PY{n}{drawmeridians}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{360}\PY{p}{,}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)}
+         \PY{n}{pmap}\PY{o}{.}\PY{n}{drawparallels}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{90}\PY{p}{,}\PY{l+m+mi}{90}\PY{p}{,}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)}
+         
+         
+         \PY{c}{\PYZsh{} Here we plot a pole at 340 E longitude, 30 N latitude with an}
+         \PY{c}{\PYZsh{} alpha 95 error angle of 5 degrees. Keyword arguments allow us}
+         \PY{c}{\PYZsh{} to specify the label, shape, and color of this data.}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}pole}\PY{p}{(}\PY{n}{pmap}\PY{p}{,}\PY{l+m+mi}{340}\PY{p}{,}\PY{l+m+mi}{30}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{VGP examples}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                        \PY{n}{marker}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{s}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Blue}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{c}{\PYZsh{} We can plot multiple poles sequentially on the same globe using}
+         \PY{c}{\PYZsh{} the same plot\PYZus{}pole function.}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}pole}\PY{p}{(}\PY{n}{pmap}\PY{p}{,}\PY{l+m+mi}{290}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{9}\PY{p}{,}\PY{n}{marker}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{s}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Blue}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+         \PY{c}{\PYZsh{} Optional save (uncomment to save the figure)}
+         \PY{c}{\PYZsh{}plt.savefig(\PYZsq{}Code\PYZus{}output/VGP\PYZus{}example.pdf\PYZsq{})}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_66_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Calculate and Plot VGPs}\label{calculate-and-plot-vgps}
+
+    Using the function \textbf{ipmag.vgp\_calc}, we can calculate virtual
+geomagnetic poles (VGPs) of our fFisher-distributed directions. We'll
+need to first assign a location to these magnetic directions - let's
+assume they are from Berkeley, CA (37.87° N, 122.27° W).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}24}]:} \PY{c}{\PYZsh{} plug in site latitude and longitude to the \PYZdq{}directions\PYZdq{} dataframe}
+         \PY{n}{directions}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{site\PYZus{}lat}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{37.97}
+         \PY{n}{directions}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{site\PYZus{}lon}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mf}{122.27}
+         
+         \PY{c}{\PYZsh{} calculate VGPs (this automatically adds VGP data to the dataframe)}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{vgp\PYZus{}calc}\PY{p}{(}\PY{n}{directions}\PY{p}{,} \PY{n}{dec\PYZus{}tc} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{dec}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{inc\PYZus{}tc} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{inc}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{directions}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}24}]:}           dec        inc  length  site\_lat  site\_lon  paleolatitude  \textbackslash{}
+         0  183.995890  45.029054       1     37.97   -122.27      26.588302   
+         1  200.588373  41.811403       1     37.97   -122.27      24.095659   
+         2  199.546318  36.865786       1     37.97   -122.27      20.553229   
+         3  182.021565  57.114399       1     37.97   -122.27      37.715082   
+         4  221.438217  38.160275       1     37.97   -122.27      21.449872   
+         
+              vgp\_lat     vgp\_lon  vgp\_lat\_rev  vgp\_lon\_rev  
+         0 -25.333013  233.776578    25.333013    53.776578  
+         1 -24.992308  216.987184    24.992308    36.987184  
+         2 -28.660199  216.813085    28.660199    36.813085  
+         3 -14.291968  236.079855    14.291968    56.079855  
+         4 -18.969679  197.086706    18.969679    17.086706  
+\end{Verbatim}
+        
+    We have already calculated the Fisher mean of this data, so let's
+translate it to a VGP too. For a one-line dataset, we plug the Fisher
+mean data into a \textbf{pandas} \textit{Series} instead of a
+\textit{DataFrame} (a \textit{DataFrame} can be considered a sequence of
+concatenated \textit{Series}).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}25}]:} \PY{n}{mean\PYZus{}pole} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{Series}\PY{p}{(}\PY{n}{fisher\PYZus{}mean}\PY{p}{)}
+         \PY{n}{mean\PYZus{}pole}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{site\PYZus{}lat}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+m+mf}{37.97}
+         \PY{n}{mean\PYZus{}pole}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{site\PYZus{}lon}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mf}{122.27}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{vgp\PYZus{}calc}\PY{p}{(}\PY{n}{mean\PYZus{}pole}\PY{p}{,} \PY{n}{dec\PYZus{}tc} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{dec}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{inc\PYZus{}tc} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{inc}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{mean\PYZus{}pole}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}25}]:} alpha95               3.15924
+         csd                   12.5535
+         dec                   198.863
+         inc                   49.1968
+         k                     41.6334
+         n                          50
+         r                     48.8231
+         site\_lat                37.97
+         site\_lon              -122.27
+         paleolatitude          30.079
+         vgp\_lat              -19.7048
+         vgp\_lon          220.44194226
+         vgp\_lat\_rev           19.7048
+         vgp\_lon\_rev           40.4419
+         dtype: object
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}26}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
+         \PY{n}{pmap} \PY{o}{=} \PY{n}{Basemap}\PY{p}{(}\PY{n}{projection}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{ortho}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{lat\PYZus{}0}\PY{o}{=}\PY{o}{\PYZhy{}}\PY{l+m+mi}{30}\PY{p}{,}\PY{n}{lon\PYZus{}0}\PY{o}{=}\PY{o}{\PYZhy{}}\PY{l+m+mi}{130}\PY{p}{,}
+                        \PY{n}{resolution}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{c}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{area\PYZus{}thresh}\PY{o}{=}\PY{l+m+mi}{50000}\PY{p}{)}
+         \PY{n}{pmap}\PY{o}{.}\PY{n}{drawcoastlines}\PY{p}{(}\PY{n}{linewidth}\PY{o}{=}\PY{l+m+mf}{0.25}\PY{p}{)}
+         \PY{n}{pmap}\PY{o}{.}\PY{n}{fillcontinents}\PY{p}{(}\PY{n}{color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{bisque}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{lake\PYZus{}color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{white}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{zorder}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{pmap}\PY{o}{.}\PY{n}{drawmapboundary}\PY{p}{(}\PY{n}{fill\PYZus{}color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{white}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{pmap}\PY{o}{.}\PY{n}{drawmeridians}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{360}\PY{p}{,}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)}
+         \PY{n}{pmap}\PY{o}{.}\PY{n}{drawparallels}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{90}\PY{p}{,}\PY{l+m+mi}{90}\PY{p}{,}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)}
+         
+         \PY{c}{\PYZsh{} use the print\PYZus{}pole\PYZus{}mean function to print the mean data above the globe}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{print\PYZus{}pole\PYZus{}mean}\PY{p}{(}\PY{n}{mean\PYZus{}pole}\PY{p}{)}
+         \PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{directions}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+             \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}vgp}\PY{p}{(}\PY{n}{pmap}\PY{p}{,} \PY{n}{directions}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{vgp\PYZus{}lon}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{n}{n}\PY{p}{]}\PY{p}{,} 
+                            \PY{n}{directions}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{vgp\PYZus{}lat}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{n}{n}\PY{p}{]}\PY{p}{)}
+         \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}pole}\PY{p}{(}\PY{n}{pmap}\PY{p}{,} \PY{n}{mean\PYZus{}pole}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{vgp\PYZus{}lon}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{mean\PYZus{}pole}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{vgp\PYZus{}lat}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} 
+                         \PY{n}{mean\PYZus{}pole}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{alpha95}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{r}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Plong: 198.9  Plat: 49.2
+Number of directions in mean (n): 50.0
+Angular radius of 95\% confidence (A\_95): 3.2
+Precision parameter (k) estimate: 41.6
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_73_1.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Plotting APWPs}\label{plotting-apwps}
+
+    The capability to plot multiple poles in sequence provides a good way to
+visualize polar wander paths. Here we use the Phanerozoic APWP of
+Laurentia \textit{(Torsvik, 2012)} to demonstrate the plot\_pole\_colorbar
+function.
+
+We first upload the Torsvik (2012) data using the pandas function
+\textit{read\_csv}.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}27}]:} \PY{n}{Laurentia\PYZus{}Pole\PYZus{}Compilation} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{./Additional\PYZus{}Data/Torsvik2012/Laurentia\PYZus{}Pole\PYZus{}Compilation.csv}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{Laurentia\PYZus{}Pole\PYZus{}Compilation}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}27}]:}    Q  A95  Com                 Formation   Lat    Lon  CLat   CLon  RLat  \textbackslash{}
+         0  5  3.9  NaN         Dunkard Formation -44.1  301.5 -41.5  300.4 -38.0   
+         1  5  2.1  NaN      Laborcita  Formation -42.1  312.1 -43.0  313.4 -32.7   
+         2  5  3.4    \#       Wescogame Formation -44.1  303.9 -46.3  306.8 -38.2   
+         3  6  3.1    I        Glenshaw Formation -28.6  299.9 -28.6  299.9 -28.6   
+         4  5  1.8  NaN  Lower  Casper  Formation -45.7  308.6 -50.5  314.6 -37.6   
+         
+            RLon               EULER  Age GPDB RefNo/Reference  
+         0  43.0  (63.2/\_ 13.9/79.9)  300               302, T  
+         1  52.9  (63.2/\_ 13.9/79.9)  301             1311,  T  
+         2  51.4  (63.2/\_ 13.9/79.9)  301             1311,  T  
+         3  32.4  (63.2/\_ 13.9/79.9)  303        Kodama (2009)  
+         4  59.8  (63.2/\_ 13.9/79.9)  303             1455,  T  
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}28}]:} \PY{c}{\PYZsh{} initiate the figure as in the plot\PYZus{}pole example}
+         \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
+         \PY{n}{pmap} \PY{o}{=} \PY{n}{Basemap}\PY{p}{(}\PY{n}{projection}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{ortho}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{lat\PYZus{}0}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{,}\PY{n}{lon\PYZus{}0}\PY{o}{=}\PY{l+m+mi}{320}\PY{p}{,}
+                        \PY{n}{resolution}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{c}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{area\PYZus{}thresh}\PY{o}{=}\PY{l+m+mi}{50000}\PY{p}{)}
+         \PY{n}{pmap}\PY{o}{.}\PY{n}{drawcoastlines}\PY{p}{(}\PY{n}{linewidth}\PY{o}{=}\PY{l+m+mf}{0.25}\PY{p}{)}
+         \PY{n}{pmap}\PY{o}{.}\PY{n}{fillcontinents}\PY{p}{(}\PY{n}{color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{bisque}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{lake\PYZus{}color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{white}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{zorder}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{pmap}\PY{o}{.}\PY{n}{drawmapboundary}\PY{p}{(}\PY{n}{fill\PYZus{}color}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{white}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{pmap}\PY{o}{.}\PY{n}{drawmeridians}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{360}\PY{p}{,}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)}
+         \PY{n}{pmap}\PY{o}{.}\PY{n}{drawparallels}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{90}\PY{p}{,}\PY{l+m+mi}{90}\PY{p}{,}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)}
+         
+         \PY{c}{\PYZsh{} Loop through the uploaded data and use the plot\PYZus{}pole\PYZus{}colorbar function}
+         \PY{c}{\PYZsh{} (instead of plot\PYZus{}pole) to plot the individual poles. The input of this}
+         \PY{c}{\PYZsh{} function is very similar to that of plot\PYZus{}pole but has the additional}
+         \PY{c}{\PYZsh{} arguments of (1)AGE, (2)MINIMUM AND (3)MAXIMUM AGES OF PLOTTED POLES.}
+         \PY{c}{\PYZsh{} Note that the ages are treated as negative numbers \PYZhy{}\PYZhy{} this just determines}
+         \PY{c}{\PYZsh{} the direction of the colorbar.}
+         \PY{k}{for} \PY{n}{n} \PY{o+ow}{in} \PY{n+nb}{xrange} \PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{Laurentia\PYZus{}Pole\PYZus{}Compilation}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+              \PY{n}{m} \PY{o}{=} \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}pole\PYZus{}colorbar}\PY{p}{(}\PY{n}{pmap}\PY{p}{,} \PY{n}{Laurentia\PYZus{}Pole\PYZus{}Compilation}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{CLon}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{n}{n}\PY{p}{]}\PY{p}{,}
+                                           \PY{n}{Laurentia\PYZus{}Pole\PYZus{}Compilation}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{CLat}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{n}{n}\PY{p}{]}\PY{p}{,}
+                                           \PY{n}{Laurentia\PYZus{}Pole\PYZus{}Compilation}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{A95}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{n}{n}\PY{p}{]}\PY{p}{,}
+                                           \PY{o}{\PYZhy{}}\PY{n}{Laurentia\PYZus{}Pole\PYZus{}Compilation}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Age}\PY{l+s}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{n}{n}\PY{p}{]}\PY{p}{,}
+                                           \PY{o}{\PYZhy{}}\PY{l+m+mi}{532}\PY{p}{,}
+                                           \PY{o}{\PYZhy{}}\PY{l+m+mi}{300}\PY{p}{,}
+                                           \PY{n}{markersize}\PY{o}{=}\PY{l+m+mi}{80}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{k}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+         
+         \PY{n}{pmap}\PY{o}{.}\PY{n}{colorbar}\PY{p}{(}\PY{n}{m}\PY{p}{,}\PY{n}{location}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{bottom}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{pad}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{5}\PY{l+s}{\PYZpc{}}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n}{label}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Age of magnetization (Ma)}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{c}{\PYZsh{} Optional save (uncomment to save the figure)}
+         \PY{c}{\PYZsh{}plt.savefig(\PYZsq{}Additional\PYZus{}Notebook\PYZus{}Output/plot\PYZus{}pole\PYZus{}colorbar\PYZus{}example.pdf\PYZsq{})}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_78_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Working with anisotropy
+data}\label{working-with-anisotropy-data}
+
+    The following code demonstrates reading magnetic anisotropy data into a
+pandas DataFrame.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}29}]:} \PY{n}{aniso\PYZus{}data} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{./Additional\PYZus{}Data/ani\PYZus{}depthplot/rmag\PYZus{}anisotropy.txt}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                                  \PY{n}{delimiter}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{skiprows}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{aniso\PYZus{}data}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}29}]:}    anisotropy\_n  anisotropy\_s1  anisotropy\_s2  anisotropy\_s3  anisotropy\_s4  \textbackslash{}
+         0           192       0.332294       0.332862       0.334844      -0.000048   
+         1           192       0.333086       0.332999       0.333916      -0.000262   
+         2           192       0.333750       0.332208       0.334041      -0.000699   
+         3           192       0.330565       0.333928       0.335507       0.000603   
+         4           192       0.332747       0.332939       0.334314      -0.001516   
+         
+            anisotropy\_s5  anisotropy\_s6  anisotropy\_sigma  anisotropy\_tilt\_correction  \textbackslash{}
+         0       0.000027      -0.000263          0.000122                          -1   
+         1      -0.000322       0.000440          0.000259                          -1   
+         2       0.000663       0.002888          0.000093                          -1   
+         3       0.000212      -0.000932          0.000198                          -1   
+         4      -0.000311      -0.000099          0.000162                          -1   
+         
+           anisotropy\_type      anisotropy\_unit  er\_analyst\_mail\_names  \textbackslash{}
+         0             AMS  Normalized by trace                    NaN   
+         1             AMS  Normalized by trace                    NaN   
+         2             AMS  Normalized by trace                    NaN   
+         3             AMS  Normalized by trace                    NaN   
+         4             AMS  Normalized by trace                    NaN   
+         
+           er\_citation\_names er\_location\_name          er\_sample\_name  \textbackslash{}
+         0        This study           U1361A  318-U1361A-001H-2-W-35   
+         1        This study           U1361A  318-U1361A-001H-3-W-90   
+         2        This study           U1361A  318-U1361A-001H-4-W-50   
+         3        This study           U1361A  318-U1361A-001H-5-W-59   
+         4        This study           U1361A  318-U1361A-001H-6-W-60   
+         
+                      er\_site\_name        er\_specimen\_name       magic\_method\_codes  
+         0  318-U1361A-001H-2-W-35  318-U1361A-001H-2-W-35  LP-X:AE-H:LP-AN-MS:SO-V  
+         1  318-U1361A-001H-3-W-90  318-U1361A-001H-3-W-90  LP-X:AE-H:LP-AN-MS:SO-V  
+         2  318-U1361A-001H-4-W-50  318-U1361A-001H-4-W-50  LP-X:AE-H:LP-AN-MS:SO-V  
+         3  318-U1361A-001H-5-W-59  318-U1361A-001H-5-W-59  LP-X:AE-H:LP-AN-MS:SO-V  
+         4  318-U1361A-001H-6-W-60  318-U1361A-001H-6-W-60  LP-X:AE-H:LP-AN-MS:SO-V  
+\end{Verbatim}
+        
+    The function \textbf{ipmag.aniso\_depthplot} is one example of how
+PmagPy works with such data to generate plots.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}30}]:} \PY{n}{ipmag}\PY{o}{.}\PY{n}{aniso\PYZus{}depthplot}\PY{p}{(}\PY{n}{dir\PYZus{}path}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{./Additional\PYZus{}Data/ani\PYZus{}depthplot/}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_84_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Curie temperature data}\label{curie-temperature-data}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}31}]:} \PY{n}{ipmag}\PY{o}{.}\PY{n}{curie}\PY{p}{(}\PY{n}{path\PYZus{}to\PYZus{}file}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{./Additional\PYZus{}Data/curie/}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                     \PY{n}{file\PYZus{}name}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{curie\PYZus{}example.dat}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{save}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,} 
+                     \PY{n}{save\PYZus{}folder}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Additional\PYZus{}Notebook\PYZus{}Output/curie/}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+second deriative maximum is at T=205
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_87_1.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_87_2.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_87_3.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_87_4.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Day plots}\label{day-plots}
+
+    Here we demonstrate the function \textbf{ipmag.dayplot}, which creates
+Day plots, squareness/coercivity and squareness/coercivity of remanence
+diagrams using hysteresis data.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}32}]:} \PY{n}{ipmag}\PY{o}{.}\PY{n}{dayplot}\PY{p}{(}\PY{n}{path\PYZus{}to\PYZus{}file}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{./Additional\PYZus{}Data/dayplot\PYZus{}magic/}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
+                       \PY{n}{hyst\PYZus{}file}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{dayplot\PYZus{}magic\PYZus{}example.dat}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                       \PY{n}{save}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,}\PY{n}{save\PYZus{}folder}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{Additional\PYZus{}Notebook\PYZus{}Output/day\PYZus{}plots/}\PY{l+s}{\PYZsq{}}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_91_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_91_1.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_91_2.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    
+    \begin{verbatim}
+<matplotlib.figure.Figure at 0x114da9290>
+    \end{verbatim}
+
+    
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Hysteresis Loops}\label{hysteresis-loops}
+
+    The function \textbf{ipmag.hysteresis\_magic} also generates a set of
+hysteresis plots with data from a \textit{magic\_measurements} file.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}33}]:} \PY{n}{ipmag}\PY{o}{.}\PY{n}{hysteresis\PYZus{}magic}\PY{p}{(}\PY{n}{path\PYZus{}to\PYZus{}file}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{./Additional\PYZus{}Data/hysteresis\PYZus{}magic/}\PY{l+s}{\PYZsq{}}\PY{p}{,}
+                          \PY{n}{hyst\PYZus{}file}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{hysteresis\PYZus{}magic\PYZus{}example.dat}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{save}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{,}
+                         \PY{n}{save\PYZus{}folder}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{./Additional\PYZus{}Notebook\PYZus{}Output/hysteresis}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+IS06a-1 1 out of  8
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_95_1.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+IS06a-2 2 out of  8
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_95_3.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+IS06a-3 3 out of  8
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_95_5.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+IS06a-4 4 out of  8
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_95_7.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+IS06a-5 5 out of  8
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_95_9.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+IS06a-6 6 out of  8
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_95_11.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+IS06a-8 7 out of  8
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_95_13.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+IS06a-9 8 out of  8
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_95_15.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Demagnetization Curves}\label{demagnetization-curves}
+
+    The function \textbf{ipmag.demag\_magic} filters and plots
+demagnetization data. These data will be read and combined by
+expedition, location, site or sample according to the \textit{plot\_by}
+keyword argument. Alternatively, you can choose to plot each specimen
+measurement individually. By default, all plots generated by this
+function will be shown. If you only wish to plot a single subset of
+data, you can use the keyword argument \textit{individual} to specify the
+name of the one site, location, sample, etc. that you would like to see.
+
+Below, we use the \textit{magic\_measurements.txt} file of Swanson-Hysell
+et al., 2014 to plot demagnetization data by site. We then specify an
+individual site (`SI1(58.1 to 64.1)') that will plot alone. Like other
+functions, these plots can be optionally saved out of the notebook.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}34}]:} \PY{n}{ipmag}\PY{o}{.}\PY{n}{demag\PYZus{}magic}\PY{p}{(}\PY{n}{path\PYZus{}to\PYZus{}file}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{./Example\PYZus{}Data/Swanson\PYZhy{}Hysell2014/}\PY{l+s}{\PYZsq{}}\PY{p}{,} 
+                          \PY{n}{plot\PYZus{}by}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{site}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{treat}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{AF}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{n}{individual}\PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{SI1(58.1 to 64.1)}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+13395  records read from  ./Example\_Data/Swanson-Hysell2014/magic\_measurements.txt
+SI1(58.1 to 64.1) plotting by:  er\_site\_name
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_99_1.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \section{Interactive plotting}\label{interactive-plotting}
+
+    IPy Widgets are part of what makes the Jupyter notebook environment so
+powerful -- these widgets allow user interaction with figures. We first
+demonstrate the use of the \textbf{interact} widget, imported below.
+
+\textit{Note: If you do not have the ipywidgets package installed, you may
+choose to either install it through Anaconda or Enthought (depending on
+your Python distribution), manually install it (a bit more difficult),
+or simply skip the next few blocks of code. Below are quick installation
+instructions for those with either an Anaconda or Enthought Canopy
+distribution.}
+
+\textbf{\textit{Installation on Anaconda}}
+
+On the command line, enter
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{conda} \NormalTok{install ipywidgets}
+\end{Highlighting}
+\end{Shaded}
+
+Make sure this installs within the Python 2 environment (if you have
+Python 3 as your default environment).
+
+\textbf{\textit{Installation on Enthought Canopy}}
+
+Open the Canopy application and navigate to the Package Manager. Search
+for and install ipywidgets.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}35}]:} \PY{k+kn}{from} \PY{n+nn}{ipywidgets} \PY{k+kn}{import} \PY{n}{interact}
+\end{Verbatim}
+
+    The \textbf{interact} widget allows adjustable values (within specified
+bounds) to all keyword arguments of a function. It can be used as a
+wrapper function, as seen below. Here we create a new function,
+\textbf{squish\_interactive}, which streamlines the
+\textbf{ipmag.squish} function and automatically inputs the
+fisher-distributed directions created at the beginning of the notebook.
+This new function also allows us to reduce the keyword arguments to the
+\textit{factor} variable, which is the only value we want to be actively
+adjustable. Finally, to make the \textbf{squish\_interactive} function
+interactive in the notebook, we ``wrap'' this function with
+\textbf{@interact} placed directly above our new function.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}36}]:} \PY{n+nd}{@interact}
+         \PY{k}{def} \PY{n+nf}{squish\PYZus{}interactive}\PY{p}{(}\PY{n}{flattening\PYZus{}factor}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.}\PY{p}{,}\PY{l+m+mf}{1.}\PY{p}{,}\PY{o}{.}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+             \PY{n}{squished\PYZus{}incs} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+             \PY{k}{for} \PY{n}{inclination} \PY{o+ow}{in} \PY{n}{inclinations}\PY{p}{:}
+                 \PY{n}{squished\PYZus{}incs}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{ipmag}\PY{o}{.}\PY{n}{squish}\PY{p}{(}\PY{n}{inclination}\PY{p}{,} \PY{n}{flattening\PYZus{}factor}\PY{p}{)}\PY{p}{)}
+         
+             \PY{c}{\PYZsh{} plot the squished directional data}
+             \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{num}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
+             \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}net}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+             \PY{n}{ipmag}\PY{o}{.}\PY{n}{plot\PYZus{}di}\PY{p}{(}\PY{n}{declinations}\PY{p}{,}\PY{n}{squished\PYZus{}incs}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_105_0.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \textbf{interact} can also be used as a regular function call -- the
+name of the interactive function is passed as the first argument,
+followed by the adjustable keyword arguments. Below, we demonstrate
+passing the \textit{curie} function's parameters to \textbf{interact}.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}37}]:} \PY{n}{interact}\PY{p}{(}\PY{n}{ipmag}\PY{o}{.}\PY{n}{curie}\PY{p}{,} \PY{n}{path\PYZus{}to\PYZus{}file}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{./Additional\PYZus{}Data/curie/}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{file\PYZus{}name}\PY{o}{=}\PY{l+s}{\PYZsq{}}\PY{l+s}{curie\PYZus{}example.dat}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{window\PYZus{}length} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{60}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+second deriative maximum is at T=205
+    \end{Verbatim}
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_107_1.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_107_2.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_107_3.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{Additional_PmagPy_Examples_files/Additional_PmagPy_Examples_107_4.pdf}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \hyperref[Jupyter-notebook-demonstrating-the-use-of-additional-PmagPy-functions]{Go
+to Top}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} 
+\end{Verbatim}
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}

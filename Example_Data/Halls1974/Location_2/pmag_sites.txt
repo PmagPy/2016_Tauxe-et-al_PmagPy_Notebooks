@@ -5,7 +5,7 @@ This study	Osler Volcanics, Nipigon Strait, Upper Normal	1	DE-K:FS-FD:FS-H:LP-DC
 This study	Osler Volcanics, Nipigon Strait, Upper Normal	2	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	285.7	42	243	5	n	100
 This study	Osler Volcanics, Nipigon Strait, Upper Normal	2	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	290.6	31.9	243	5	n	0
 This study	Osler Volcanics, Nipigon Strait, Upper Normal	3	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	307.4	37.9	2485	5	n	100
-This study	Osler Volcanics, Nipigon Strait, Upper Normal	3	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	310	24.6	2485	5	n	0
+This study	Osler Volcanics, Nipigon Strait, Upper Normal	3	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	310.0	24.6	2485	5	n	0
 This study	Osler Volcanics, Nipigon Strait, Upper Normal	4	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	302.8	29.9	331	5	n	100
 This study	Osler Volcanics, Nipigon Strait, Upper Normal	4	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	303.9	18.2	331	5	n	0
 This study	Osler Volcanics, Nipigon Strait, Upper Normal	5	DE-K:FS-FD:FS-H:LP-DC2:SO-SM	294.7	42.5	130	5	n	100
