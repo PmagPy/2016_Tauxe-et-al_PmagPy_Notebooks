@@ -21,8 +21,8 @@ The other notebook shows a variety of shorter examples putting PmagPy functions 
 ###Using or viewing the notebooks
 To run the code in the notebooks it is necessary to both download the code from the Github repository and have an installed Python distribution that includes Jupyter and the other standard scientific python libraries (http://www.scipy.org/). If you followed the directions to install Enthought's Canopy Python distribution that are in the PmagPy cookbook (http://earthref.org/PmagPy/cookbook/), you have Jupyter and IPython installed. Just type `ipython notebook` or `jupyter notebook` in your command line or open up a notebook in Canopy. There are also good instructions for installing IPython/Jupyter here: http://ipython.org/install.html. 
 
-Alternatively you can view a static version of the notebooks online with the Jupyter nbviewer at these links: 
+Alternatively you can view static versions of the notebooks online at these links: 
 
-[Example PmagPy Notebook](https://nbviewer.jupyter.org/github/PmagPy/2016_Tauxe-et-al_PmagPy_Notebooks/blob/master/Example_PmagPy_Notebook.ipynb)
+[Example PmagPy Notebook](http://pmagpy.github.io/Example_PmagPy_Notebook.html)
 
-[Additional PmagPy Examples](https://nbviewer.jupyter.org/github/PmagPy/2016_Tauxe-et-al_PmagPy_Notebooks/blob/master/Additional_PmagPy_Examples.ipynb)
+[Additional PmagPy Examples](http://pmagpy.github.io/Additional_PmagPy_Examples.html)
