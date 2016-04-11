@@ -1,1 +1,0 @@
-Site 	 N 	 B (uT) 	 sigma 	 sigma perc 	 VADM 	 VADM sigma
