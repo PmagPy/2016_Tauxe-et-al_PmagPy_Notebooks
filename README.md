@@ -14,12 +14,12 @@ One of the notebooks is an illustrative example of taking two data sets from the
 
 [Example_PmagPy_Notebook.ipynb](https://github.com/PmagPy/2016_Tauxe-et-al_PmagPy_Notebooks/blob/master/Example_PmagPy_Notebook.ipynb)
 
-The other notebook shows a variety of shorter examples putting PmagPy functions to use within the notebook environment:
+The other notebook shows a variety of shorter code examples that put PmagPy functions to use within the notebook environment:
 
 [Additional_PmagPy_Examples.ipynb](https://github.com/PmagPy/2016_Tauxe-et-al_PmagPy_Notebooks/blob/master/Additional_PmagPy_Examples.ipynb)
 
 ###Using or viewing the notebooks
-To run the code in the notebooks it is necessary to both download the code from the Github repository and have an installed Python distribution that includes Jupyter and the other standard scientific python libraries (http://www.scipy.org/). If you followed the directions to install Enthought's Canopy Python distribution that are in the PmagPy cookbook (http://earthref.org/PmagPy/cookbook/), you have Jupyter and IPython installed. Just type `ipython notebook` or `jupyter notebook` in your command line or open up a notebook in Canopy. There are also good instructions for installing IPython/Jupyter here: http://ipython.org/install.html. 
+To run the code in the notebooks it is necessary to both download the code from the Github repository and have an installed Python distribution that includes Jupyter and the other standard scientific python libraries (http://www.scipy.org/). If you followed the directions to install Enthought's Canopy Python distribution that are in the PmagPy cookbook (http://earthref.org/PmagPy/cookbook/), you have Jupyter and IPython installed. Type `ipython notebook` or `jupyter notebook` in your command line or open up a notebook in Canopy. There are also good instructions for installing IPython/Jupyter here: http://ipython.org/install.html. 
 
 Alternatively you can view static versions of the notebooks online at these links: 
 
