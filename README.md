@@ -3,11 +3,11 @@
 
 ###Repository overview
 
-This repository contains two example Jupyter notebooks using an IPython kernel that was developed for the Tauxe et al., 2016 manuscript on the PmagPy project.
+This repository contains two example Jupyter notebooks using an IPython kernel that were developed for the Tauxe et al., 2016 manuscript on the PmagPy project.
 
-**PmagPy: Software package for paleomagnetic data analysis and a bridge to the Magnetics Information Consortium (MagIC) Database**
+Tauxe, L., R. Shaar, L. Jonestrask, N. L. Swanson-Hysell, R. Minnett, A. A. P. Koppers, C. G. Constable, N. Jarboe, K. Gaastra, and L. Fairchild (2016), PmagPy: Software package for paleomagnetic data analysis and a bridge to the Magnetics Information Consortium (MagIC) Database, Geochem. Geophys. Geosyst., 17, [doi:10.1002/2016GC006307](http://dx.doi.org/10.1002/2016GC006307).
 
-*L. Tauxe, R. Shaar, L. Jonestrask, N.L. Swanson-Hysell, K. Gaastra, L. Fairchild, N. Jarboe, R. Minnett, A.A.P. Koppers, and C.G. Constable*
+
 
 ###The notebooks in the repository
 One of the notebooks is an illustrative example of taking two data sets from the MagIC database and conducting a variety of analyses on them including a fold test, a common mean test and the calculation of a combined paleomagnetic pole:
