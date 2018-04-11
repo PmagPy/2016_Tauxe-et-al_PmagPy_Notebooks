@@ -13,3 +13,5 @@ dependencies:
     - future
     - pmagpy
     - pmagpy-cli
+exclude_patterns:
+  - "*Python2.ipynb"
