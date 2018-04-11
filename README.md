@@ -1,5 +1,4 @@
 ## Open and reproducible paleomagnetic data analysis in Jupyter notebooks
-================================
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/PmagPy/2016_Tauxe-et-al_PmagPy_Notebooks/master)
 
 ### Repository overview
